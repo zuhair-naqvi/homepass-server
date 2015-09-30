@@ -29,4 +29,4 @@ This application was written using the BDD (Behaviour Driven Development) method
 * Click "SEND"
 * See results under the "Response" section
 * Try the same key more than 5 times consequtively and you'll see a rate limit response
-* Try a differnt key or wait an hour and try the same key and it will work again.
+* Try a different key or wait an hour and try the same key and it will work again.
