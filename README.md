@@ -30,3 +30,8 @@ This application was written using the BDD (Behaviour Driven Development) method
 * See results under the "Response" section
 * Try the same key more than 5 times consequtively and you'll see a rate limit response
 * Try a different key or wait an hour and try the same key and it will work again.
+
+## Notes
+
+* Written in ECMAScript6, transpiled with babel using babel-node
+* Tested on Node v0.12.7 on OS X Yosemite 10.10.4
