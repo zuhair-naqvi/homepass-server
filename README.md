@@ -1,3 +1,9 @@
+## Architecture
+
+The application consists of:
+* `app/Api.js` - A private, consumer agnostic API layer that handles all domain logic
+* `app/Server.js` - A public-facing RESTFul API that consumes Api.js
+
 ## Installation
 
 * `npm i --save`
@@ -17,12 +23,6 @@
 * See results under the "Response" section
 * Try the same key more than 5 times consequtively and you'll see a rate limit response
 * Try a differnt key or wait an hour and try the same key and it will work again.
-
-## Architecture
-
-The application consists of:
-* `app/Api.js` - A private, consumer agnostic API layer that handles all domain logic
-* `app/Server.js` - A public-facing RESTFul API that consumes Api.js
 
 ## Tests
 
