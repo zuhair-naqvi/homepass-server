@@ -1,3 +1,7 @@
+## Installation
+
+* `npm i --save`
+
 ## Usage
 
 * From the root directory (where this file is), execute the `npm run dev` command, copy the REST Endpoint URL and port printed in the terminal.
@@ -26,7 +30,3 @@ This application was written using the BDD (Behaviour Driven Development) method
 
 * `npm run test` to execute tests
 * `npm run cover` to check test coverage
-
-## Troubleshooting
-
-* `npm i --save`
