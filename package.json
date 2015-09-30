@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node ./Server.js",
+    "dev": "babel-node ./app/Server.js",
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register",
     "cover": "babel-node ./node_modules/isparta/bin/isparta cover _mocha"
   },

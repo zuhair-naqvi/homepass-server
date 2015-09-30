@@ -1,6 +1,6 @@
 ## Usage
 
-* From the root directory (where this file is), execute the `npm run dev` command, copy the URL and port printed in the terminal.
+* From the root directory (where this file is), execute the `npm run dev` command, copy the REST Endpoint URL and port printed in the terminal.
 * Install Chrome Advance REST Client https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?utm_source=gmail
 * Paste the URL and port into the URL field.
 * Select Request type as "POST"
@@ -17,16 +17,16 @@
 ## Architecture
 
 The application consists of:
-* Api.js - A private, consumer agnostic API layer that handles all domain logic
-* Server.js - A public-facing RESTFul API that consumes Api.js
+* `app/Api.js` - A private, consumer agnostic API layer that handles all domain logic
+* `app/Server.js` - A public-facing RESTFul API that consumes Api.js
 
 ## Tests
 
-This application was written using the BDD (Behaviour Driven Development) methodology with Mocha and Chai frameworks, see apiTests.js
+This application was written using the BDD (Behaviour Driven Development) methodology with Mocha and Chai frameworks, see `test/apiTests.js`
 
 * `npm run test` to execute tests
 * `npm run cover` to check test coverage
 
 ## Troubleshooting
 
-* npm i --save
+* `npm i --save`
