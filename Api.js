@@ -1,32 +1,34 @@
 import _ from 'lodash';
 import axios from 'axios';
+import moment from 'moment';
 
 // Define App constants
 const gateway = 'http://api.openweathermap.org/data/2.5/weather';
 const rateLimit = 10;
-const requests = [];
 const users = [
   { 'name': 'zuhair',  'key': 'XYZ', 'active': true },
-  { 'name': 'fred',    'key': 'PQR', 'active': false },
-  { 'name': 'pebbles', 'key': 'ABC', 'active': true }
+  { 'name': 'dylan',  'key': 'XYZ', 'active': true },
+  { 'name': 'sam',  'key': 'XYZ', 'active': true },
+  { 'name': 'ben',    'key': 'PQR', 'active': false },
+  { 'name': 'ari', 'key': 'ABC', 'active': true }
 ];
 
-// Define API Methods
+/**
+* Handles all domain logic and commnunication with backend (Weather service)
+*/
+
 export default class Api {
 
     constructor(){
         this.user = false;
         this.httpError = false;
         this.httpResponse = false;
+        this.requests = [];
     }
 
-    setApiKey(key) {
-        this.key = key;
-    }
+    authenticate(key) {
 
-    authenticate() {
-
-        var authedUser = _.find(users, { 'key': this.key, 'active': true });
+        var authedUser = _.find(users, { 'key': key, 'active': true });
 
         if(authedUser) {
             this.user = authedUser;
@@ -38,9 +40,21 @@ export default class Api {
 
     }
 
-    handleRequest(city, country, doneCallback) {
+    passRateLimit(key) {
+        var userRequests = this.requests.filter((req)=>{        
+            return req.key == key && moment().diff(moment(req.timestamp), 'minutes') < 60;
+        });
+        return userRequests.length < 5 ? true : false;
+    }
+
+    handleRequest(city, country) {
         
-        if(!this.user) throw new Error('Not Authenticated');      
+        this.requests.push({
+            'key': this.user.key, 
+            'city': city,
+            'country': country,
+            'timestamp': moment()
+        });
 
         return axios.get(gateway, {
             params: {

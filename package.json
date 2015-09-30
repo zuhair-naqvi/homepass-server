@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "babel-node ./Server.js",
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register",
     "cover": "babel-node ./node_modules/isparta/bin/isparta cover _mocha"
   },
@@ -11,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.7.0",
+    "boom": "^2.9.0",
     "chai": "^3.3.0",
     "hapi": "^10.1.0",
     "lodash": "^3.10.1",
     "mocha": "^2.3.3",
+    "moment": "^2.10.6",
     "superagent": "^1.4.0",
     "superagent-no-cache": "^0.1.0"
   },
