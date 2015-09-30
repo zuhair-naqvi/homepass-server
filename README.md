@@ -8,6 +8,13 @@ The application consists of:
 
 * `npm i --save`
 
+## Tests
+
+This application was written using the BDD (Behaviour Driven Development) methodology with Mocha and Chai frameworks, see `test/apiTests.js`
+
+* `npm run test` to execute tests
+* `npm run cover` to check test coverage
+
 ## Usage
 
 * From the root directory (where this file is), execute the `npm run dev` command, copy the REST Endpoint URL and port printed in the terminal.
@@ -23,10 +30,3 @@ The application consists of:
 * See results under the "Response" section
 * Try the same key more than 5 times consequtively and you'll see a rate limit response
 * Try a differnt key or wait an hour and try the same key and it will work again.
-
-## Tests
-
-This application was written using the BDD (Behaviour Driven Development) methodology with Mocha and Chai frameworks, see `test/apiTests.js`
-
-* `npm run test` to execute tests
-* `npm run cover` to check test coverage
